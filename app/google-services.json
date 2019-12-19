@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "199569047036",
+    "firebase_url": "https://audit360-68fa4.firebaseio.com",
+    "project_id": "audit360-68fa4",
+    "storage_bucket": "audit360-68fa4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199569047036:android:026e58a58661f6ce",
+        "android_client_info": {
+          "package_name": "com.indiqube.audit360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199569047036-4qdv947d50ihnh5act18ok3a5dib3hav.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.indiqube.audit360",
+            "certificate_hash": "2ac09aab7499095832fb9c494672f6ed2745dfae"
+          }
+        },
+        {
+          "client_id": "199569047036-mnnerlvbt7hv3mh9k4p07nnab2vt8ljm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDouEV01Cj6LD0XLODqUlAV1gbo6L0WzFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199569047036-mnnerlvbt7hv3mh9k4p07nnab2vt8ljm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

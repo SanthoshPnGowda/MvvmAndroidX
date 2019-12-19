@@ -1,41 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:card_view="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
-            type="com.example.tech.mvvmproj.ui.post.PostViewModel" />
+            type="com.indiqube.audit360.ui.home.PostViewModel" />
 
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/post_title"
-            android:textStyle="bold"
-            app:mutableText="@{viewModel.getPostTitle()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
+        card_view:cardCornerRadius="8dp">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/post_body"
-            android:layout_marginTop="8dp"
-            app:mutableText="@{viewModel.getPostBody()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/post_title"
-            />
-
-    </android.support.constraint.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

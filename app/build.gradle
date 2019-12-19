@@ -23,7 +23,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.indiqube.audit360"
+        applicationId "com.sample.newproject"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1

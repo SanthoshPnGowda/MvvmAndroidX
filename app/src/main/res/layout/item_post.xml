@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.indiqube.audit360.ui.home.PostViewModel" />
+            type="com.sample.newproject.ui.home.PostViewModel" />
 
     </data>
 

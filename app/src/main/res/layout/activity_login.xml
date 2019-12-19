@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.indiqube.audit360.ui.login.LoginViewModel" />
+            type="com.sample.newproject.ui.login.LoginViewModel" />
     </data>
 
     <RelativeLayout

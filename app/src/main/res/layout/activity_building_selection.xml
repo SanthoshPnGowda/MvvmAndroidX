@@ -5,7 +5,7 @@
 
         <variable
             name="model"
-            type="com.indiqube.audit360.ui.home.HomeViewModel" />
+            type="com.sample.newproject.ui.home.HomeViewModel" />
     </data>
 
     <FrameLayout

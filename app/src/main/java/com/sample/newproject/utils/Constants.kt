@@ -9,7 +9,7 @@ const val BASE_URL_PROD: String = "https://jsonplaceholder.typicode.com"
 
 enum class TICKET_TYPE(val `val`: Int, val `key`: String) {
     ALL(1, "ALL"), SAVED(2, "SAVED"),
-    SUBITTED(3, "SUBMITTED")
+    SUBMITTED(3, "SUBMITTED")
 }
 
 /*Get Base Url based On Build Configuration*/

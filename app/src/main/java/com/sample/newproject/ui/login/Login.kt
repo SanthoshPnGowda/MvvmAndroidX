@@ -12,10 +12,7 @@ import com.sample.newproject.R
 import com.sample.newproject.databinding.ActivityLoginBinding
 import com.sample.newproject.injection.ViewModelFactory
 import com.sample.newproject.ui.home.Home
-import com.sample.newproject.utils.extension.PreferencesHelper
-import com.sample.newproject.utils.extension.hideStatusBar
-import com.sample.newproject.utils.extension.isEmailValid
-import com.sample.newproject.utils.extension.showLoading
+import com.sample.newproject.utils.extension.*
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -61,8 +58,17 @@ class Login : AppCompatActivity() {
             tlemail.error = if (!email.text.toString().isEmailValid()) "Invalid Email" else null
             tlpass.error = if (password.text.length < 6) "Invalid Password" else null
             if (tlemail.error == null && tlpass.error == null) {
+
+                if (isConnected()) {
+                    isConnectedToInternetAccess().subscribe { hasInternet ->
+                        if (hasInternet)
+                            startActivity(Intent(this, Home::class.java))
+                        else
+                            toast("No Internet Access,Please switch the network")
+                    }
+                } else
+                    toast("No Internet Connection")
                 // viewModel.login(email.text.toString(), password.text.toString())
-                startActivity(Intent(this, Home::class.java))
             }
 
 

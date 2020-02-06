@@ -7,20 +7,20 @@
         <item
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search_black_24dp"
-            android:title="Search Building" />
+            android:title="Search" />
         <item
             android:id="@+id/nav_all"
             android:checked="true"
             android:icon="@drawable/ic_search_black_24dp"
-            android:title="All Checklist" />
+            android:title="All" />
         <item
             android:id="@+id/nav_submit"
             android:icon="@drawable/ic_search_black_24dp"
-            android:title="Submitted Checklist" />
+            android:title="Submitted" />
         <item
             android:id="@+id/nav_saved"
             android:icon="@drawable/ic_search_black_24dp"
-            android:title="Saved Checklist" />
+            android:title="Saved" />
 
     </group>
 

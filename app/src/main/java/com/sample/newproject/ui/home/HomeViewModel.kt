@@ -1,15 +1,16 @@
 package com.sample.newproject.ui.home
 
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
 import android.view.View
+import androidx.lifecycle.MutableLiveData
 import com.sample.newproject.base.BaseViewModel
 import com.sample.newproject.model.Post
 import com.sample.newproject.model.PostDao
+import com.sample.newproject.network.ApiError
 import com.sample.newproject.network.PostApi
-import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class HomeViewModel(private val postDao: PostDao) : BaseViewModel() {
@@ -23,17 +24,14 @@ class HomeViewModel(private val postDao: PostDao) : BaseViewModel() {
 
     private lateinit var subscription: Disposable
 
-    init {
-        loadPost()
-    }
 
     override fun onCleared() {
         super.onCleared()
         subscription.dispose()
     }
 
-    private fun loadPost() {
-        subscription = Observable.fromCallable { postDao.all }
+    fun loadPost() {
+        subscription = postApi.getPosts()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe {
@@ -43,27 +41,29 @@ class HomeViewModel(private val postDao: PostDao) : BaseViewModel() {
                     onRetrievePostFinish()
                 }
                 .subscribe(
-                        {result -> onRetrievePostListSuccess(result)},
-                        {e -> onRetrievePostListError(e.message) }
+                        { result -> onRetrievePostListSuccess(result) },
+                        { e -> onRetrievePostListError(ApiError(e)) }
 
                 )
 
     }
 
-    private fun onRetrievePostListStart(){
+    private fun onRetrievePostListStart() {
         loadingVisibility.value = View.VISIBLE
         errorMessage.value = null
     }
 
-    private fun  onRetrievePostFinish(){
+    private fun onRetrievePostFinish() {
         loadingVisibility.value = View.GONE
     }
 
-    private fun onRetrievePostListSuccess(postList:List<Post>){
+    private fun onRetrievePostListSuccess(postList: List<Post>) {
         postListAdapter.updatePostList(postList)
     }
 
-    private fun onRetrievePostListError(E:String?){
-        errorMessage.value = E
+    private fun onRetrievePostListError(E: ApiError?) {
+        loadingVisibility.value = View.GONE
+        Log.d("ERROR", E?.message)
+        errorMessage.value = E?.message
     }
 }

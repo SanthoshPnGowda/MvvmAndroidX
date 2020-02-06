@@ -1,9 +1,9 @@
 package com.sample.newproject.ui.login
 
-import androidx.lifecycle.MutableLiveData
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.sample.newproject.R
 import com.sample.newproject.base.BaseViewModel
@@ -11,7 +11,6 @@ import com.sample.newproject.model.Post
 import com.sample.newproject.network.ApiError
 import com.sample.newproject.network.PostApi
 import io.reactivex.disposables.Disposable
-
 import javax.inject.Inject
 
 class LoginViewModel : BaseViewModel() {
